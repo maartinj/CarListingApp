@@ -34,10 +34,13 @@ struct CarItemDetails: View {
                     // RatingView -> https://www.hackingwithswift.com/books/ios-swiftui/adding-a-custom-star-rating-component
                     Spacer()
                         .frame(height: 12)
-                    Text("Show details")
-                        .foregroundColor(ThemeColors.details).bold()
-                        .padding(.vertical, 1)
-                    
+                    Button {
+                        
+                    } label: {
+                        Text("Show details")
+                            .foregroundColor(ThemeColors.details).bold()
+                            .padding(.vertical, 1)
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 12)
