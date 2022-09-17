@@ -16,7 +16,9 @@
   - [x] Rating
 - [ ] **Level 1 Reward: Gold Badge**
 
-
+<p align="left">
+  <img src="https://github.com/maartinj/CarListingApp/blob/main/Level1Requirements.png" height="500" />
+</p>
 
 
 ###### Level 2 Requirements
