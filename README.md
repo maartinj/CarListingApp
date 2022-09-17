@@ -17,6 +17,8 @@
 - [ ] **Level 1 Reward: Gold Badge**
 
 
+
+
 ###### Level 2 Requirements
 
 - [ ] Add or implement the expandable card to the list
