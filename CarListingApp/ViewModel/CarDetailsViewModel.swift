@@ -9,9 +9,25 @@ import Foundation
 
 final class CarDetailsViewModel: ObservableObject {
     
-    @Published private(set) var cars: [CarDetailsModel] = []
+    @Published var cars: [CarDetailsModel] = []
+    @Published var selection: Set<CarDetailsModel> = []
     
     func fetchCars() {
-        
+        do {
+            let res = try StaticJSONMapper.decode(file: "CarList", type: CarDataModel.self)
+            
+            cars = res.data
+        } catch {
+            //TODO: Handle any errors
+            print(error)
+        }
+    }
+    
+    func selectDeselect(_ car: CarDetailsModel) {
+        if selection.contains(car) {
+            selection.remove(car)
+        } else {
+            selection.insert(car)
+        }
     }
 }

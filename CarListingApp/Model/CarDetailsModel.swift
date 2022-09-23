@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - CarDetailsModel
-struct CarDetailsModel: Codable {
+struct CarDetailsModel: Codable, Identifiable, Hashable {
     let id: Int
     let consList: [String]
     let customerPrice: Int

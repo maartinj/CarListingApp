@@ -13,44 +13,40 @@ struct Home: View {
         Theme.navigationBarColors(background: .white, titleColor: UIColor.init(ThemeColors.title))
     }
     
-    @State private var cars: [CarDetailsModel] = []
+    @State private var isExpanded: Bool = false
+    @State private var selectedId: Int? = 1
+    @EnvironmentObject var vm: CarDetailsViewModel
     
     let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 1)
     
-    @StateObject private var vm = CarDetailsViewModel()
-    
     var body: some View {
-        NavigationView {
-            ZStack {
-                
-                background
-                
-                ScrollView {
+        GeometryReader { geoSize in
+            NavigationView {
+                ZStack {
                     
-                    LazyVGrid(columns: columns, spacing: 5) {
+                    background
+                    
+                    ScrollView {
                         
-                        //ForEach(0...5, id: \.self) { car in
-                        //ForEach(vm.cars, id: \.id) { car in
-                        ForEach(cars, id: \.id) { car in
+                        LazyVGrid(columns: columns, spacing: 5) {
                             
-                            CarItemDetails(car: car)
-                            
+                            ForEach(vm.cars) { car in
+                                CarItemDetails(geoAnimation: geoSize.size.width, car: car, isExpanded: vm.selection.contains(car), selectedId: $selectedId)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            selectedId = selectedId == car.id ? nil : car.id
+                                        }
+                                    }
+                            }
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
                         }
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 10)
+                        
                     }
                 }
-            }
-            .navigationTitle("CarListing")
-            .onAppear {
-                //vm.fetchCars()
-                do {
-                    let res = try StaticJSONMapper.decode(file: "CarList", type: CarDataModel.self)
-                    
-                    cars = res.data
-                } catch {
-                    //TODO: Handle any errors
-                    print(error)
+                .navigationTitle("CarListing")
+                .onAppear {
+                    vm.fetchCars()
                 }
             }
         }
@@ -60,6 +56,7 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
+            .environmentObject(CarDetailsViewModel())
     }
 }
 
