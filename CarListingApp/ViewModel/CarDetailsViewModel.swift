@@ -11,6 +11,7 @@ final class CarDetailsViewModel: ObservableObject {
     
     @Published var cars: [CarDetailsModel] = []
     @Published var selection: Set<CarDetailsModel> = []
+    @Published var filteredCars = [CarDetailsModel]()
     
     func fetchCars() {
         do {

@@ -52,7 +52,7 @@ struct Home: View {
                                 
                             } else if findMake.isEmpty == false {
                                     
-                                    ForEach(vm.cars.filter({ findMake.isEmpty ? true : $0.make.lowercased().contains(findMake.lowercased()) })) { car in
+                                    ForEach(vm.cars.filter({ findMake.isEmpty ? true : $0.make.lowercased().localizedCaseInsensitiveContains(findMake.lowercased()) })) { car in
                                         CarItemDetails(geoAnimation: geoSize.size.width, car: car, isExpanded: vm.selection.contains(car), selectedId: $selectedId)
                                             .onTapGesture {
                                                 withAnimation {
@@ -65,7 +65,7 @@ struct Home: View {
                                 
                                 } else if findModel.isEmpty == false {
                                     
-                                    ForEach(vm.cars.filter({ findModel.isEmpty ? true : $0.model.lowercased().contains(findModel.lowercased()) })) { car in
+                                    ForEach(vm.cars.filter({ findModel.isEmpty ? true : $0.model.lowercased().localizedCaseInsensitiveContains(findModel.lowercased()) })) { car in
                                         CarItemDetails(geoAnimation: geoSize.size.width, car: car, isExpanded: vm.selection.contains(car), selectedId: $selectedId)
                                             .onTapGesture {
                                                 withAnimation {
@@ -80,13 +80,6 @@ struct Home: View {
                         }
                     .onAppear {
                         vm.fetchCars()
-                    }
-                    .overlay {
-                        if findMake.isEmpty == false {
-                            EmptyViewMake(findMake: $findMake)
-                        } else if findModel.isEmpty == false {
-                            EmptyViewModel(findModel: $findModel)
-                        }
                     }
                 }
                 .navigationTitle("CarListing")
