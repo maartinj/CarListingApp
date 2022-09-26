@@ -41,3 +41,7 @@
 - [x] Show the result in the dropdown.
 - [x] The UI should be updated accordingly upon selecting a specific filter/s.
 - [ ] **Level 3 Reward: Diamond Badge**
+
+<p align="left">
+  <img src="https://github.com/maartinj/CarListingApp/blob/main/CarListingAppScreen.png" height="500" />
+</p>
