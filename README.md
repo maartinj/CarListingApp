@@ -33,11 +33,11 @@
 
 ###### Level 3 Requirements
 
-- [ ] Implement the filters.
-- [ ] Add a filter section in the UI, such as:
-  - [ ] Vehicle make
-  - [ ] Vehicle model
-- [ ] You can create the two filters list from the JSON provided or come up with your own.
-- [ ] Show the result in the dropdown.
-- [ ] The UI should be updated accordingly upon selecting a specific filter/s.
+- [x] Implement the filters.
+- [x] Add a filter section in the UI, such as:
+  - [x] Vehicle make
+  - [x] Vehicle model
+- [x] You can create the two filters list from the JSON provided or come up with your own.
+- [x] Show the result in the dropdown.
+- [x] The UI should be updated accordingly upon selecting a specific filter/s.
 - [ ] **Level 3 Reward: Diamond Badge**
