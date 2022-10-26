@@ -14,7 +14,7 @@
   - [x] Name
   - [x] Price
   - [x] Rating
-- [ ] **Level 1 Reward: Gold Badge**
+- [x] **Level 1 Reward: Gold Badge**
 
 <p align="left">
   <img src="https://github.com/maartinj/CarListingApp/blob/main/Level1Requirements.png" height="500" />
@@ -28,7 +28,7 @@
 - [x] Upon clicking or tapping an item, the previous item will collapse, and the new item will expand.
 - [x] Pros and cons sections should be shown.
 - [x] Note that there is no limit to the number of bullet points inside the card so these should be added and scaled dynamically.
-- [ ] **Level 2 Reward: Platinum Badge**
+- [x] **Level 2 Reward: Platinum Badge**
 
 
 ###### Level 3 Requirements
@@ -40,8 +40,13 @@
 - [x] You can create the two filters list from the JSON provided or come up with your own.
 - [x] Show the result in the dropdown.
 - [x] The UI should be updated accordingly upon selecting a specific filter/s.
-- [ ] **Level 3 Reward: Diamond Badge**
+- [x] **Level 3 Reward: Diamond Badge**
 
 <p align="left">
   <img src="https://github.com/maartinj/CarListingApp/blob/main/CarListingAppScreen.png" height="500" />
+</p>
+
+### [Earned Badge](https://codecrew.codewithchris.com/badges/113/car-dealer-3-diamond?username=maartin):
+<p align="left">
+  <img src="https://github.com/maartinj/CarListingApp/blob/main/carDiamondBadge.png" height="300" />
 </p>
